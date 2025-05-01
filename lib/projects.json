@@ -1,0 +1,38 @@
+[
+  {
+    "name": "Luxury Living Room",
+    "image_url": "https://dqgjdlnrys4aobt1.public.blob.vercel-storage.com/Gallery/av3-7pmEKr5WrM2MA1GniVLR28lOntJWG7.jpeg",
+    "service_ids": [1, 2],
+    "brand_ids": [33, 20]
+  },
+  {
+    "name": "Luxury Living Room",
+    "image_url": "https://dqgjdlnrys4aobt1.public.blob.vercel-storage.com/Gallery/av1-fH0QJEyogGjgsVdhr4VoEprSXLOqdc.jpeg",
+    "service_ids": [1, 2],
+    "brand_ids": [33, 20]
+  },
+  {
+    "name": "High Tech Media Room",
+    "image_url": "https://dqgjdlnrys4aobt1.public.blob.vercel-storage.com/Gallery/av4-vphSyeR0PjV681CS2cNrFc2aGFFqbO.jpeg",
+    "service_ids": [1, 2, 9, 5],
+    "brand_ids": [36, 32, 26, 17]
+  },
+  {
+    "name": "High Speed Home Network",
+    "image_url": "https://dqgjdlnrys4aobt1.public.blob.vercel-storage.com/Gallery/server-zJ7HBMtTxQh6DYipqqBsvwZJtARDxO.jpeg",
+    "service_ids": [7, 9],
+    "brand_ids": [9]
+  },
+  {
+    "name": "Wall Recessed TV",
+    "image_url": "https://dqgjdlnrys4aobt1.public.blob.vercel-storage.com/Gallery/tv-a3YTfBlFKpGLZB3eY2q11rpoixx0GC.jpeg",
+    "service_ids": [1],
+    "brand_ids": [32]
+  },
+  {
+    "name": "Wall Mounted Television",
+    "image_url": "https://dqgjdlnrys4aobt1.public.blob.vercel-storage.com/Gallery/tv2-HLZ7mxNTb6erxz3W7wcFGFjuCZn7q1.jpeg",
+    "service_ids": [1],
+    "brand_ids": [31]
+  }
+]

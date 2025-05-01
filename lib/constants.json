@@ -1,0 +1,49 @@
+{
+  "video_testimonials": [
+    {
+      "id": 1,
+      "name": "Person in video",
+      "quote": "Seagull Electronics transformed our home with their exceptional service and expertise. The team was professional and the results exceeded our expectations.",
+      "video_url": "",
+      "thumbnail": "/placeholder.svg?height=600&width=400"
+    },
+    {
+      "id": 2,
+      "name": "Person in video",
+      "quote": "Working with Seagull Electronics was a pleasure from start to finish. Their attention to detail and knowledge of home automation is unmatched.",
+      "video_url": "",
+      "thumbnail": "/placeholder.svg?height=600&width=400"
+    },
+    {
+      "id": 3,
+      "name": "Person in video",
+      "quote": "The quality of work and customer service provided by Seagull Electronics is outstanding. They truly care about delivering the best experience possible.",
+      "video_url": "",
+      "thumbnail": "/placeholder.svg?height=600&width=400"
+    }
+  ],
+
+  "projects": [
+    {
+      "id": 1,
+      "title": "Luxury Home Theater Installation",
+      "image": "/placeholder.svg?height=800&width=1600",
+      "service_ids": [3, 2, 5],
+      "brand_ids": [4, 8, 7]
+    },
+    {
+      "id": 2,
+      "title": "Smart Home Automation System",
+      "image": "/placeholder.svg?height=800&width=1600",
+      "service_ids": [1, 7, 6],
+      "brand_ids": [2, 10]
+    },
+    {
+      "id": 3,
+      "title": "Outdoor Entertainment Area",
+      "image": "/placeholder.svg?height=800&width=1600",
+      "service_ids": [4, 2, 3],
+      "brand_ids": [9, 5]
+    }
+  ]
+}
