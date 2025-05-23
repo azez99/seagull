@@ -9,7 +9,6 @@ export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false)
   const [scrolled, setScrolled] = useState(false)
   const [mobileServicesOpen, setMobileServicesOpen] = useState(false)
-  const [mobileLocationsOpen, setMobileLocationsOpen] = useState(false)
 
   // Hardcoded services
   const services = [
@@ -22,26 +21,6 @@ export default function Navbar() {
     { id: "networking", name: "Networking" },
     { id: "security", name: "Security" },
   ]
-
-  // Hardcoded locations
-  const locations = [
-    { id: "palm-beach", name: "Palm Beach" },
-    { id: "palm-beach-gardens", name: "Palm Beach Gardens" },
-    { id: "jupiter", name: "Jupiter" },
-    { id: "tequesta", name: "Tequesta" },
-    { id: "west-palm-beach", name: "West Palm Beach" },
-    { id: "stuart", name: "Stuart" },
-    { id: "hobe-sound", name: "Hobe Sound" },
-    { id: "north-palm-beach", name: "North Palm Beach" },
-    { id: "boca-raton", name: "Boca Raton" },
-    { id: "delray-beach", name: "Delray Beach" },
-  ]
-
-  // Create location items for the navbar - UPDATED to use /locations/ instead of /location/
-  const locationItems = locations.map((location) => ({
-    name: location.name,
-    href: `/locations/${location.id}`,
-  }))
 
   // Create service items for the navbar - using absolute paths to ensure they work from any page
   const serviceItems = services.map((service) => ({
@@ -201,12 +180,6 @@ export default function Navbar() {
     setMobileServicesOpen(!mobileServicesOpen)
   }
 
-  const toggleMobileLocations = (e) => {
-    e.preventDefault()
-    e.stopPropagation()
-    setMobileLocationsOpen(!mobileLocationsOpen)
-  }
-
   return (
     <nav className="w-full z-50 transition-all duration-300">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -247,43 +220,6 @@ export default function Navbar() {
                     </Link>
                   ))}
                   {serviceItems.slice(4).map((item) => (
-                    <Link
-                      key={item.name}
-                      href={item.href}
-                      className="text-white hover:text-[#ffca77] block px-3 py-2 text-base"
-                    >
-                      {item.name}
-                    </Link>
-                  ))}
-                </div>
-              </div>
-            </div>
-
-            <div className="relative group">
-              <button
-                className="text-white hover:text-[#ffe2b6] px-3 py-2 text-base font-medium flex items-center gap-1 group"
-                aria-expanded="false"
-              >
-                Locations
-                <ChevronDown className="h-5 w-5 transition-transform group-hover:rotate-180" />
-              </button>
-
-              {/* Locations Dropdown with animation */}
-              <div
-                className="absolute left-0 mt-0 w-80 bg-[#1b1814] border border-[#ffca77] rounded-md shadow-lg z-50 transform opacity-0 scale-95 pointer-events-none group-hover:opacity-100 group-hover:scale-100 group-hover:pointer-events-auto transition-all duration-200 origin-top-left"
-                style={{ top: "calc(100% - 1px)" }}
-              >
-                <div className="grid grid-cols-2 gap-2 p-4">
-                  {locationItems.slice(0, 5).map((item) => (
-                    <Link
-                      key={item.name}
-                      href={item.href}
-                      className="text-white hover:text-[#ffca77] block px-3 py-2 text-base"
-                    >
-                      {item.name}
-                    </Link>
-                  ))}
-                  {locationItems.slice(5).map((item) => (
                     <Link
                       key={item.name}
                       href={item.href}
@@ -344,28 +280,6 @@ export default function Navbar() {
           {/* Mobile Services Dropdown */}
           <div className={`pl-6 space-y-1 mt-1 ${mobileServicesOpen ? "block" : "hidden"}`}>
             {serviceItems.map((item) => (
-              <Link
-                key={item.name}
-                href={item.href}
-                className="text-gray-300 hover:text-[#ffca77] block px-3 py-2 text-sm"
-                onClick={() => setIsOpen(false)}
-              >
-                {item.name}
-              </Link>
-            ))}
-          </div>
-
-          <button
-            onClick={toggleMobileLocations}
-            className="text-white hover:text-[#ffca77] block px-3 py-2 text-base font-medium w-full text-left flex items-center justify-between"
-          >
-            <span>Locations</span>
-            {mobileLocationsOpen ? <ChevronUp className="h-4 w-4" /> : <ChevronDown className="h-4 w-4" />}
-          </button>
-
-          {/* Mobile Locations Dropdown */}
-          <div className={`pl-6 space-y-1 mt-1 ${mobileLocationsOpen ? "block" : "hidden"}`}>
-            {locationItems.map((item) => (
               <Link
                 key={item.name}
                 href={item.href}
