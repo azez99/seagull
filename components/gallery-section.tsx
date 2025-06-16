@@ -65,7 +65,7 @@ export default function GallerySection() {
         const brandsModule = await import("@/lib/brands.json")
         const brandsData = brandsModule.default || []
 
-        setProjects(projectsData)
+        setProjects(projectsData.filter((_, index) => index !== 1))
         setServices(servicesData)
         setBrands(brandsData)
       } catch (err) {
@@ -197,17 +197,21 @@ export default function GallerySection() {
           onTouchEnd={handleTouchEnd}
         >
           {/* Image */}
-          <div ref={imageRef} className="relative h-[250px] md:h-[500px]">
+          <div
+            ref={imageRef}
+            className="relative h-[250px] md:h-[500px] flex justify-center border border-[#ffca77]/30 rounded-lg"
+          >
             <Image
               src={currentProject.image_url || "/placeholder.svg?height=500&width=800"}
               alt={currentProject.name || "Project image"}
-              fill
-              className="object-cover rounded-t-lg md:rounded-lg"
+              width={800}
+              height={500}
+              className="object-contain max-w-full h-full rounded-t-lg md:rounded-lg"
               priority
             />
 
             {/* Dark overlay for better text visibility */}
-            <div className="absolute inset-0 bg-black/30 rounded-t-lg md:rounded-lg"></div>
+            <div className="absolute inset-0 bg-black/30 rounded-lg"></div>
 
             {/* Image caption */}
             <div className="absolute bottom-0 left-0 right-0 p-4 bg-gradient-to-t from-black/70 to-transparent">

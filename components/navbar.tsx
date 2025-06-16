@@ -9,6 +9,7 @@ export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false)
   const [scrolled, setScrolled] = useState(false)
   const [mobileServicesOpen, setMobileServicesOpen] = useState(false)
+  const [mobileLocationsOpen, setMobileLocationsOpen] = useState(false)
 
   // Hardcoded services
   const services = [
@@ -22,10 +23,32 @@ export default function Navbar() {
     { id: "security", name: "Security" },
   ]
 
-  // Create service items for the navbar - using absolute paths to ensure they work from any page
+  // Hardcoded locations
+  const locations = [
+    { id: "palm-beach", name: "Palm Beach" },
+    { id: "palm-beach-gardens", name: "Palm Beach Gardens" },
+    { id: "jupiter", name: "Jupiter" },
+    { id: "tequesta", name: "Tequesta" },
+    { id: "west-palm-beach", name: "West Palm Beach" },
+    { id: "stuart", name: "Stuart" },
+    { id: "hobe-sound", name: "Hobe Sound" },
+    { id: "north-palm-beach", name: "North Palm Beach" },
+    { id: "boca-raton", name: "Boca Raton" },
+    { id: "delray-beach", name: "Delray Beach" },
+    { id: "boston", name: "Boston" },
+    { id: "new-york-city", name: "New York City" },
+  ]
+
+  // Create location items for the navbar - UPDATED to use /locations/ instead of /location/
+  const locationItems = locations.map((location) => ({
+    name: location.name,
+    href: `/locations/${location.id}`,
+  }))
+
+  // Create service items for the navbar - UPDATED to use /services/ routes instead of anchor links
   const serviceItems = services.map((service) => ({
     name: service.name,
-    href: `/#${service.id}`,
+    href: `/services/${service.id}`,
   }))
 
   useEffect(() => {
@@ -59,32 +82,8 @@ export default function Navbar() {
 
         const hash = hrefParts[1]
 
-        // For service links, we need to set the active tab in the What We Do section
-        if (services.some((service) => service.id === hash)) {
-          e.preventDefault()
-
-          // Close mobile menu if open
-          if (isOpen) setIsOpen(false)
-
-          // Check if we're already on the home page
-          if (window.location.pathname !== "/") {
-            // If not on home page, navigate to home with the hash
-            window.location.href = `/#${hash}`
-            return
-          }
-
-          // Update URL with hash
-          window.location.hash = hash
-
-          // Scroll to services section
-          const servicesSection = document.getElementById("services")
-          if (servicesSection) {
-            servicesSection.scrollIntoView({
-              behavior: "smooth",
-              block: "start",
-            })
-          }
-        } else if (hash === "gallery") {
+        // Handle gallery and ratings links (remove service link handling)
+        if (hash === "gallery") {
           e.preventDefault()
 
           // Close mobile menu if open
@@ -138,7 +137,7 @@ export default function Navbar() {
 
     document.addEventListener("click", handleAnchorClick)
     return () => document.removeEventListener("click", handleAnchorClick)
-  }, [isOpen, services])
+  }, [isOpen])
 
   // Check for hash in URL on page load and scroll to that section
   useEffect(() => {
@@ -146,29 +145,18 @@ export default function Navbar() {
       const hash = window.location.hash.replace("#", "")
       if (hash) {
         setTimeout(() => {
-          // For service links, scroll to the services section
-          if (services.some((service) => service.id === hash)) {
-            const servicesSection = document.getElementById("services")
-            if (servicesSection) {
-              servicesSection.scrollIntoView({
-                behavior: "smooth",
-                block: "start",
-              })
-            }
-          } else {
-            // For other anchors, scroll to the specific element
-            const element = document.getElementById(hash)
-            if (element) {
-              element.scrollIntoView({
-                behavior: "smooth",
-                block: "start",
-              })
-            }
+          // For other anchors (gallery, ratings), scroll to the specific element
+          const element = document.getElementById(hash)
+          if (element) {
+            element.scrollIntoView({
+              behavior: "smooth",
+              block: "start",
+            })
           }
         }, 500) // Delay to ensure page is fully loaded
       }
     }
-  }, [services])
+  }, [])
 
   const toggleMenu = () => {
     setIsOpen(!isOpen)
@@ -178,6 +166,12 @@ export default function Navbar() {
     e.preventDefault()
     e.stopPropagation()
     setMobileServicesOpen(!mobileServicesOpen)
+  }
+
+  const toggleMobileLocations = (e) => {
+    e.preventDefault()
+    e.stopPropagation()
+    setMobileLocationsOpen(!mobileLocationsOpen)
   }
 
   return (
@@ -220,6 +214,43 @@ export default function Navbar() {
                     </Link>
                   ))}
                   {serviceItems.slice(4).map((item) => (
+                    <Link
+                      key={item.name}
+                      href={item.href}
+                      className="text-white hover:text-[#ffca77] block px-3 py-2 text-base"
+                    >
+                      {item.name}
+                    </Link>
+                  ))}
+                </div>
+              </div>
+            </div>
+
+            <div className="relative group">
+              <button
+                className="text-white hover:text-[#ffe2b6] px-3 py-2 text-base font-medium flex items-center gap-1 group"
+                aria-expanded="false"
+              >
+                Locations
+                <ChevronDown className="h-5 w-5 transition-transform group-hover:rotate-180" />
+              </button>
+
+              {/* Locations Dropdown with animation */}
+              <div
+                className="absolute left-0 mt-0 w-80 bg-[#1b1814] border border-[#ffca77] rounded-md shadow-lg z-50 transform opacity-0 scale-95 pointer-events-none group-hover:opacity-100 group-hover:scale-100 group-hover:pointer-events-auto transition-all duration-200 origin-top-left"
+                style={{ top: "calc(100% - 1px)" }}
+              >
+                <div className="grid grid-cols-2 gap-2 p-4">
+                  {locationItems.slice(0, 5).map((item) => (
+                    <Link
+                      key={item.name}
+                      href={item.href}
+                      className="text-white hover:text-[#ffca77] block px-3 py-2 text-base"
+                    >
+                      {item.name}
+                    </Link>
+                  ))}
+                  {locationItems.slice(5).map((item) => (
                     <Link
                       key={item.name}
                       href={item.href}
@@ -280,6 +311,28 @@ export default function Navbar() {
           {/* Mobile Services Dropdown */}
           <div className={`pl-6 space-y-1 mt-1 ${mobileServicesOpen ? "block" : "hidden"}`}>
             {serviceItems.map((item) => (
+              <Link
+                key={item.name}
+                href={item.href}
+                className="text-gray-300 hover:text-[#ffca77] block px-3 py-2 text-sm"
+                onClick={() => setIsOpen(false)}
+              >
+                {item.name}
+              </Link>
+            ))}
+          </div>
+
+          <button
+            onClick={toggleMobileLocations}
+            className="text-white hover:text-[#ffca77] block px-3 py-2 text-base font-medium w-full text-left flex items-center justify-between"
+          >
+            <span>Locations</span>
+            {mobileLocationsOpen ? <ChevronUp className="h-4 w-4" /> : <ChevronDown className="h-4 w-4" />}
+          </button>
+
+          {/* Mobile Locations Dropdown */}
+          <div className={`pl-6 space-y-1 mt-1 ${mobileLocationsOpen ? "block" : "hidden"}`}>
+            {locationItems.map((item) => (
               <Link
                 key={item.name}
                 href={item.href}

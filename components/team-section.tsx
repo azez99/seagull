@@ -20,15 +20,15 @@ export default function TeamSection() {
       image: "/placeholder.svg?height=200&width=200",
     },
     {
-      name: "Sani Di Leo",
-      role: "Office Manager",
-      image: "/placeholder.svg?height=200&width=200",
+      name: "Sandi Di Leo",
+      role: "Director of Finance and Office Administration",
+      image: "/images/sandi-headshot.jpg",
     },
   ]
 
   return (
     <section
-      className="py-16"
+      className=""
       style={{
         boxShadow: "inset 0 0 150px rgba(255, 202, 119, 0.15)",
         background: "#080808",

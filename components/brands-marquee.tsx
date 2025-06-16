@@ -76,7 +76,7 @@ export default function BrandsMarquee() {
                   alt={brand.name}
                   width={200}
                   height={80}
-                  className="h-16 w-auto object-contain"
+                  className="h-16 w-auto max-w-[120px] object-contain"
                   priority={index < 8} // Prioritize loading for first 8 images
                   loading={index < 8 ? "eager" : "lazy"}
                 />
@@ -92,7 +92,7 @@ export default function BrandsMarquee() {
                   alt={brand.name}
                   width={200}
                   height={80}
-                  className="h-16 w-auto object-contain"
+                  className="h-16 w-auto max-w-[120px] object-contain"
                   loading="lazy"
                 />
               </div>

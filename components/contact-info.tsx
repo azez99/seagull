@@ -11,15 +11,15 @@ export default function ContactInfo() {
             <MapPin className="h-6 w-6 text-[#ffca77] mr-3 mt-0.5 flex-shrink-0" />
             <address className="not-italic text-gray-300">
               <p>430 Toney Penna Dr</p>
-              <p>Suite 2</p>
+              <p>Suite 1</p>
               <p>Jupiter, FL 33458</p>
             </address>
           </li>
 
           <li className="flex items-center">
             <Phone className="h-6 w-6 text-[#ffca77] mr-3 flex-shrink-0" />
-            <a href="tel:+15615758500" className="text-gray-300 hover:text-[#ffe2b6]">
-              (561) 575-8500
+            <a href="tel:+15616240220" className="text-gray-300 hover:text-[#ffe2b6]">
+              (561) 624-0220
             </a>
           </li>
 
@@ -44,7 +44,7 @@ export default function ContactInfo() {
         <h3 className="text-xl font-bold text-white mb-4">Our Location</h3>
         <div className="h-[300px] relative rounded-lg overflow-hidden border border-[#ffca77]/30">
           <iframe
-            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3563.0832583006647!2d-80.1059488!3d26.7541511!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x88df28421c7ff4bd%3A0x7f9362b3a3a1ba38!2s430%20Toney%20Penna%20Dr%20%232%2C%20Jupiter%2C%20FL%2033458!5e0!3m2!1sen!2sus!4v1710866925!5m2!1sen!2sus"
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3563.0832583006647!2d-80.1059488!3d26.7541511!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x88df28421c7ff4bd%3A0x7f9362b3a3a1ba38!2s430%20Toney%20Penna%20Dr%20%231%2C%20Jupiter%2C%20FL%2033458!5e0!3m2!1sen!2sus!4v1710866925!5m2!1sen!2sus"
             width="100%"
             height="100%"
             style={{ border: 0 }}

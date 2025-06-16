@@ -51,6 +51,45 @@ export default async function ServicePage({ params }: { params: { slug: string }
             <div className="max-w-7xl mx-auto px-4 w-full">
               <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white mb-4">{service.name}</h1>
               <p className="text-xl text-[#ffe2b6] max-w-2xl">{service.subtitle}</p>
+              <div className="flex flex-col sm:flex-row items-start sm:items-center gap-4 mt-6">
+                {/* Primary CTA - Call Now */}
+                <a
+                  href="tel:+15616240220"
+                  className="inline-flex items-center bg-[#ffca77] hover:bg-[#ffca77]/80 text-black font-bold px-6 py-3 rounded-md transition-colors shadow-lg hover:shadow-xl transform hover:scale-105 transition-transform"
+                >
+                  <svg className="w-5 h-5 mr-2" fill="currentColor" viewBox="0 0 20 20">
+                    <path d="M2 3a1 1 0 011-1h2.153a1 1 0 01.986.836l.74 4.435a1 1 0 01-.54 1.06l-1.548.773a11.037 11.037 0 006.105 6.105l.774-1.548a1 1 0 011.059-.54l4.435.74a1 1 0 01.836.986V17a1 1 0 01-1 1h-2C7.82 18 2 12.18 2 5V3z" />
+                  </svg>
+                  CALL NOW
+                </a>
+
+                {/* Secondary CTA - Contact Form */}
+                <Link
+                  href="/contact"
+                  className="inline-flex items-center border-2 border-[#ffe2b6] text-[#ffe2b6] hover:bg-[#ffe2b6] hover:text-black font-medium px-6 py-3 rounded-md transition-colors shadow-lg hover:shadow-xl"
+                >
+                  <svg className="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeWidth={2}
+                      d="M3 8l7.89 4.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"
+                    />
+                  </svg>
+                  REQUEST CONSULTATION
+                </Link>
+
+                {/* Phone number display */}
+                <div className="text-white sm:ml-4">
+                  <div className="text-sm text-[#ffe2b6] mb-1">Call us directly:</div>
+                  <a
+                    href="tel:+15616240220"
+                    className="text-lg font-bold text-white hover:text-[#ffe2b6] transition-colors"
+                  >
+                    (561) 624-0220
+                  </a>
+                </div>
+              </div>
             </div>
           </div>
         </div>
