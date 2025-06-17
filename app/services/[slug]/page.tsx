@@ -102,11 +102,11 @@ export default async function ServicePage({ params }: { params: { slug: string }
             {/* Article content from database */}
             {cleanArticle ? (
               <article
-                className="prose prose-lg prose-invert max-w-none"
+                className="prose prose-lg prose-invert max-w-none [&_p]:text-gray-300"
                 dangerouslySetInnerHTML={{ __html: cleanArticle }}
               />
             ) : (
-              <div className="prose prose-lg prose-invert max-w-none">
+              <div className="prose prose-lg prose-invert max-w-none [&_p]:text-gray-300">
                 <p>
                   At Seagull Electronics, we specialize in providing high-quality {service.name.toLowerCase()} solutions
                   for your home. Contact us to learn more about our {service.name.toLowerCase()} services and how we can
