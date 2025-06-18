@@ -113,9 +113,9 @@ export default function AboutPage() {
 
           <div className="space-y-8">
             <p className="text-gray-300">
-              The Siegel family moved to the Juno Beach area in 1988 and opened Seagull Hardware. With Seagull
-              Electronics, Jacob's son Steven still brings the same trustworthy values and honest service to the Palm
-              Beach area with an expanded range of electronics services.
+              The Siegel family moved to the Juno Beach area in 1988 and founded both Seagull Hardware and Seagull
+              Electronics. Jacob's son Steven continues to bring the same trustworthy values and honest service to the
+              Palm Beach area with an expanded range of electronics services through Seagull Electronics.
             </p>
 
             <p className="text-gray-300">
@@ -170,7 +170,7 @@ export default function AboutPage() {
             <div className="bg-[#080808] rounded-lg overflow-hidden border border-[#ffca77]/20">
               <div className="relative h-[400px]">
                 <Image
-                  src="/images/evan-headshot-full.jpg"
+                  src="/images/evan-headshot-professional.jpg"
                   alt="Evan Siegel"
                   fill
                   className="object-cover object-top"
@@ -260,8 +260,8 @@ export default function AboutPage() {
                   <div className="md:pl-12">
                     <h3 className="text-xl font-bold text-white mb-2">1988</h3>
                     <p className="text-gray-400">
-                      The Siegel family moved to the Juno Beach area and opened Seagull Hardware, bringing trustworthy
-                      values and honest service to the Palm Beach area.
+                      The Siegel family moved to the Juno Beach area and founded both Seagull Hardware and Seagull
+                      Electronics, bringing trustworthy values and honest service to the Palm Beach area.
                     </p>
                   </div>
                 </div>

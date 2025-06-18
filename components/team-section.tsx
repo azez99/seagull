@@ -12,7 +12,7 @@ export default function TeamSection() {
     {
       name: "Evan Siegel",
       role: "COO / Vice President",
-      image: "/images/evan-headshot-new.jpg",
+      image: "/images/evan-headshot-professional.jpg",
     },
     {
       name: "Karen Siegel",
@@ -35,7 +35,7 @@ export default function TeamSection() {
       }}
     >
       <div className="max-w-7xl mx-auto px-4 relative">
-        <h2 className="text-3xl font-bold text-white text-center mb-10 pt-10">Our Team</h2>
+        <h2 className="text-3xl font-bold text-white text-center mb-10 pt-10">Management Team</h2>
 
         <div className="grid grid-cols-2 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-12 justify-items-center mx-auto max-w-4xl">
           {team.map((member) => (
