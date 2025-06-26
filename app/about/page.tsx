@@ -88,13 +88,28 @@ export default function AboutPage() {
                 </div>
               </div>
             </div>
-            <div className="relative h-[400px] rounded-lg overflow-hidden">
-              <Image
-                src="/images/steven-evan-handshake-storefront.jpeg"
-                alt="Steven and Evan Siegel in front of Seagull Electronics"
-                fill
-                className="object-cover"
-              />
+            <div className="relative h-[400px] rounded-lg overflow-hidden bg-[#1b1814] border border-[#ffca77]/20 flex items-center justify-center">
+              <div className="text-center text-gray-400">
+                <div className="w-20 h-20 bg-[#ffca77]/20 rounded-full mx-auto mb-4 flex items-center justify-center">
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="32"
+                    height="32"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    strokeWidth="2"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                    className="text-[#ffca77]"
+                  >
+                    <path d="M14.5 4h-5L7 7H4a2 2 0 0 0-2 2v9a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V9a2 2 0 0 0-2-2h-3l-2.5-3z"></path>
+                    <circle cx="12" cy="13" r="3"></circle>
+                  </svg>
+                </div>
+                <p className="text-lg font-medium text-[#ffca77] mb-2">Under Construction</p>
+                <p className="text-sm">Photo Coming Soon</p>
+              </div>
             </div>
           </div>
         </div>
@@ -143,12 +158,12 @@ export default function AboutPage() {
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-12">
             <div className="bg-[#080808] rounded-lg overflow-hidden border border-[#ffca77]/20">
               <div className="relative h-[400px]">
-                <Image
-                  src="/images/steven-headshot-full.jpg"
-                  alt="Steven Siegel"
-                  fill
-                  className="object-cover object-top"
-                />
+                <div className="w-full h-full bg-gray-600 flex items-center justify-center">
+                  <div className="text-gray-400 text-center">
+                    <div className="w-16 h-16 bg-gray-500 rounded-full mx-auto mb-2"></div>
+                    <p className="text-sm">Photo Coming Soon</p>
+                  </div>
+                </div>
               </div>
               <div className="p-6">
                 <h3 className="text-xl font-bold text-white mb-2">Steven Siegel</h3>

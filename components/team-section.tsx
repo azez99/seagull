@@ -7,7 +7,7 @@ export default function TeamSection() {
     {
       name: "Steven Siegel",
       role: "CEO / President",
-      image: "/images/steven-headshot-new.jpg",
+      image: "/placeholder.svg?height=200&width=200",
     },
     {
       name: "Evan Siegel",
